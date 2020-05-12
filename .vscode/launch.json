@@ -1,0 +1,40 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch via deno",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "deno",
+      "runtimeArgs": [
+        "run",
+        "--inspect",
+        "--allow-net",
+        "${file}"
+      ],
+      "port": 9229,
+      "outputCapture": "std",
+      // "sourceMaps": true
+    },
+    {
+      "name": "Launch via deno test",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "deno",
+      "runtimeArgs": [
+        "test",
+        "--inspect",
+        "--allow-net",
+        "${file}"
+      ],
+      "port": 9229,
+      "outputCapture": "std",
+      // "sourceMaps": true
+    }
+  ]
+}

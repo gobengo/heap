@@ -1,0 +1,12 @@
+{
+  "name": "@gobengo/heap",
+  "version": "1.0.0",
+  "description": "A Minimum Heap in TypeScript.",
+  "main": "heap.ts",
+  "scripts": {
+    "test": "deno test heap.ts",
+    "mjs": "deno bundle heap.ts heap.mjs"
+  },
+  "author": "",
+  "license": "ISC"
+}
