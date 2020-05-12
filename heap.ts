@@ -1,31 +1,31 @@
-export type IComparator<T> = (a: T, b: T) => Number
+export type IComparator<T> = (a: T, b: T) => Number;
 
 /** compare two values in a way that would sort them in descending order */
 const descendingComparator = <T>(a: T, b: T) => {
-  if (a > b) { return -1 }
-  else if (a < b) { return 1 }
-  return 0
-}
+  if (a > b) return -1;
+  else if (a < b) return 1;
+  return 0;
+};
 
 /**
  * Heap that supports popping the max item.
  */
-export function MaxHeap<T>(initialValues: T[]=[]) {
-  return Heap(descendingComparator, initialValues)
+export function MaxHeap<T>(initialValues: T[] = []) {
+  return Heap(descendingComparator, initialValues);
 }
 
 /** compare two values in a way that would sort them in ascending order */
 const ascendingComparator = <T>(a: T, b: T) => {
-  if (a < b) { return -1 }
-  else if (a > b) { return 1 }
-  return 0
-}
+  if (a < b) return -1;
+  else if (a > b) return 1;
+  return 0;
+};
 
 /*
  * Heap that supports popping the min item.
  */
-export function MinHeap<T>(initialValues: T[]=[]) {
-  return Heap(ascendingComparator, initialValues)
+export function MinHeap<T>(initialValues: T[] = []) {
+  return Heap(ascendingComparator, initialValues);
 }
 
 /**
@@ -116,7 +116,11 @@ function buildHeap<T>(initialValues: Array<T>, comparator: IComparator<T>) {
  * @param comparator {Function} comparator to use to sort values (same as argment to Array#sort)
  * @param index {Number} index of value to siftDown
  */
-function siftDown<T>(array: Array<T>, index: number, comparator: IComparator<T>) {
+function siftDown<T>(
+  array: Array<T>,
+  index: number,
+  comparator: IComparator<T>,
+) {
   while (index < array.length) {
     let left = leftIndex(index);
     let right = rightIndex(index);

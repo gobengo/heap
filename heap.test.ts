@@ -59,7 +59,7 @@ export const testDefinitions: Array<Deno.TestDefinition> = [
   {
     name: "Can build a MaxHeap",
     fn() {
-      const initialValues = [3,4,5,2]
+      const initialValues = [3, 4, 5, 2];
       let heap = MaxHeap(initialValues);
       assertEquals(heap.length, 4);
       assertEquals(heap.pop(), 5);
@@ -67,7 +67,7 @@ export const testDefinitions: Array<Deno.TestDefinition> = [
       heap.push(1);
       assertEquals(heap.pop(), 7);
       assertEquals(heap.pop(), 4);
-    }
+    },
   },
 
   /**
@@ -78,19 +78,20 @@ export const testDefinitions: Array<Deno.TestDefinition> = [
     fn() {
       // we'll make a heap whose values are arrays of whatever.
       // and sorted by array length in ascending order
-      let a1 = [null]
-      let a2 = [1,"2"]
-      let a3 = [false, () => {}, new Date]
-      const arrayLengthComparator: IComparator<Array<any>> = (a, b) => a.length - b.length
-      let heap = Heap(arrayLengthComparator)
-      heap.push(a2)
-      heap.push(a1)
-      heap.push(a3)
-      assertEquals(heap.pop(), a1)
-      assertEquals(heap.pop(), a2)
-      assertEquals(heap.pop(), a3)
-    }
-  }
+      let a1 = [null];
+      let a2 = [1, "2"];
+      let a3 = [false, () => {}, new Date()];
+      const arrayLengthComparator: IComparator<Array<any>> = (a, b) =>
+        a.length - b.length;
+      let heap = Heap(arrayLengthComparator);
+      heap.push(a2);
+      heap.push(a1);
+      heap.push(a3);
+      assertEquals(heap.pop(), a1);
+      assertEquals(heap.pop(), a2);
+      assertEquals(heap.pop(), a3);
+    },
+  },
 ];
 
 if ((typeof Deno !== "undefined") && (typeof Deno.test === "function")) {
